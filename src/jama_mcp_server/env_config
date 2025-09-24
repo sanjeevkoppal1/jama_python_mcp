@@ -1,0 +1,50 @@
+# Jama Connect Configuration
+JAMA_BASE_URL=https://your-org.jamacloud.com
+JAMA_USERNAME=your-username
+JAMA_PASSWORD=your-password
+JAMA_API_TOKEN=your-api-token
+JAMA_PROJECT_ID=your-project-id
+
+# NLP Configuration
+NLP_MODEL=en_core_web_sm  # spaCy model
+SENTENCE_TRANSFORMER_MODEL=all-MiniLM-L6-v2  # For embeddings
+ENABLE_GPU=false  # Set to true if GPU available
+NLP_BATCH_SIZE=32
+
+# Vector Database Configuration (Optional - can work without vector DB)
+ENABLE_VECTOR_DB=true  # Set to false to disable ChromaDB
+VECTOR_DB_TYPE=chroma  # options: chroma, faiss, memory
+CHROMA_PERSIST_DIRECTORY=./data/chroma_db
+CHROMA_COLLECTION_NAME=jama_requirements
+EMBEDDING_DIMENSION=384
+
+# Real-time Processing
+ENABLE_REAL_TIME=true
+WEBSOCKET_PORT=8001
+PROCESSING_INTERVAL=30  # seconds
+MAX_CONCURRENT_PROCESSING=5
+
+# Business Rule Extraction
+BUSINESS_RULE_PATTERNS_FILE=./config/business_rule_patterns.json
+CLASSIFICATION_MODEL_PATH=./models/requirement_classifier.joblib
+ENABLE_CUSTOM_RULES=true
+
+# MCP Server Configuration
+MCP_SERVER_PORT=8000
+LOG_LEVEL=INFO
+ENABLE_CORS=true
+API_PREFIX=/api/v1
+
+# Performance & Caching
+CACHE_TTL=3600  # seconds
+MAX_SEARCH_RESULTS=50
+SIMILARITY_THRESHOLD=0.7
+
+# Data Processing
+CHUNK_SIZE=1000
+PARALLEL_PROCESSING=true
+MAX_WORKERS=4
+
+# Fallback Search Configuration (when vector DB disabled)
+ENABLE_TEXT_SEARCH=true  # Basic text search as fallback
+TEXT_SEARCH_ENGINE=whoosh  # options: whoosh, sqlite_fts
