@@ -5,7 +5,7 @@ An intelligent Model Context Protocol (MCP) server for Jama Connect that provide
 ## ✨ Features
 
 ### 🧠 Advanced NLP Processing
-- **Business Rule Extraction**: Automatically identify and extract business rules like "mortgage rules" and "interdiction conditions"
+- **Business Rule Extraction**: Automatically identify and extract business rules
 - **Requirement Classification**: Categorize requirements as functional, non-functional, business rules, constraints, etc.
 - **Entity Recognition**: Extract entities, keywords, and relationships from requirement text
 - **Semantic Analysis**: Sentiment analysis, complexity scoring, and linguistic feature extraction
