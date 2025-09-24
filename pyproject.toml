@@ -1,0 +1,86 @@
+[project]
+name = "jama-python-mcp-server"
+version = "1.0.0"
+description = "Python MCP server for intelligent Jama requirements analysis with NLP and semantic search"
+authors = [
+    {name = "AI Development Team", email = "dev@example.com"}
+]
+dependencies = [
+    # MCP Protocol
+    "mcp>=0.4.0",
+    
+    # Web Framework & API
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "requests>=2.31.0",
+    "aiohttp>=3.9.0",
+    "httpx>=0.25.0",
+    
+    # Data Processing
+    "pandas>=2.1.0",
+    "numpy>=1.24.0",
+    
+    # NLP Libraries (Open Source)
+    "spacy>=3.7.0",
+    "transformers>=4.35.0",
+    "sentence-transformers>=2.2.0",
+    "nltk>=3.8.0",
+    "scikit-learn>=1.3.0",
+    "textblob>=0.17.0",
+    
+    # Vector Database
+    "chromadb>=0.4.0",
+    
+    # Configuration & Environment
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "python-dotenv>=1.0.0",
+    
+    # Utilities
+    "rich>=13.7.0",
+    "typer>=0.9.0",
+    "asyncio-mqtt>=0.13.0",
+    "websockets>=12.0",
+    
+    # Data Validation & Serialization
+    "marshmallow>=3.20.0",
+    "jsonschema>=4.20.0",
+    
+    # Logging & Monitoring
+    "structlog>=23.2.0",
+    "prometheus-client>=0.19.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.12.0",
+    "black>=23.11.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.7.0",
+    "pre-commit>=3.5.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[project.scripts]
+jama-mcp-server = "jama_mcp_server.main:main"
